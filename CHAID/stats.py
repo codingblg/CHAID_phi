@@ -3,6 +3,7 @@ from .column import NominalColumn, OrdinalColumn, ContinuousColumn
 from .split import Split
 import numpy as np
 from scipy import stats
+import phik
 from .invalid_split_reason import InvalidSplitReason
 from numpy import nan as NaN
 
@@ -35,6 +36,23 @@ def chisquare(n_ij, weighted):
 
     return (chi, p_val, dof)
 
+
+def phi_k_score(n_ij, weighted)
+    """
+    Calculates the phi_k for a matrix of ind_v x dev_v for the unweighted and weighted case
+    :param n_ij: 
+    :param weighted: 
+    :return: 
+    """
+    if weighted:
+        pass
+    else:
+        m_ij = (np.vstack(n_ij.sum(axis=1)) * n_ij.sum(axis=0)) / n_ij.sum().astype(float)
+
+    dof = (n_ij.shape[0] - 1) * (n_ij.shape[1] - 1)
+    chi, p_val = 1, 0.1
+
+    return chi, p_val, dof
 
 class Stats(object):
     """
